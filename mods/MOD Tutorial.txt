@@ -1,0 +1,248 @@
+This document provides a basic "how to" for building your own
+data-based MOD for Red Faction.
+
+
+----------
+IMPORTANT:
+----------
+MODs are not fully supported by Volition or THQ.  While we may
+offer help and advice on informal channels like the VBB, we
+cannot provide full customer service for MOD creation or usage.
+
+They can be a lot of fun, but use them at your own risk.
+
+
+--------------------
+VERY VERY IMPORTANT:
+--------------------
+Do !NOT! edit the original files when making a MOD.  If you need
+to change any of the files (table files, textures, etc.) make a
+copy of them and place them in your MOD directory.  Altering the
+original files can cause serious problems with the game.  It will
+also cause problems when updating to newer versions of Red Faction
+in the future.
+
+If you found you've accidentally altered original datafiles and
+you're not sure what to do, uninstall Red Faction and re-install
+it from CD.
+
+
+BASICS:
+-------
+The MOD system more or less works like this:
+
+You can either replace existing files from the game with new ones,
+or add new files to the game.  If you replace an existing file it
+will be changed everywhere in the game. 
+
+Ex - if you change the texture file for a guard, all guards of
+that type will appear with the new skin in the game.  This is
+the easiest way to make small changes to the game.
+
+Creating new items won't have a direct affect on the game as is,
+but can then be used in new levels that are created with that MOD.
+Once all the needed models and table files are created you can
+place the item in a level just like any of the predefined items.
+
+NOTE: if you create a level with a MOD (by running the editor
+with the "-mod <your_mod>" option) that level will not be available
+to play unless you are running Red Faction with the same MOD.
+The editor will warn you if you open a level and it was made with
+a different MOD.
+
+The directory in which you place your files IS THE NAME OF YOUR MOD.
+Anyone wishing to play your mod must use the same directory name.
+
+You treat both types of files essentially the same when creating
+the MOD:  put all of the files you want for the MOD in to the
+directory:
+ \RedFaction\mods\your_mod
+
+... where "RedFaction" is the directory the game is installed and
+your_mod is the name of the MOD you are creating.
+
+(See the next section below for details)
+
+
+VPP PACKFILES:
+--------------
+Once you have all of the files in the directory you need to
+create a VPP packfile out of them (see NOTE below).
+The game and editor both require mod data to be in packfiles
+in order to load.
+
+The packfiles you build for your mod can be named anything, but they
+must have the filename extension ".VPP".  Place your packfile(s)
+into a subdirectory under \RedFaction\mods\.
+
+Example:  You want to make a mod called "JohnWeapons".  Any VPP
+file(s) you create for it must go into this subdirectory:
+  \RedFaction\mods\JohnWeapons\
+
+By doing this, you are officially naming your mod "JohnsWeapons".
+The subdirectory name you see in the \mods directory is the name
+of the mod.  This means anyone (particularly in multiplayer) who wants
+to use your mod needs to name that subdirectory the same way.  Keep
+this in mind when you're zipping up your mods for others, creating
+installers, etc.
+
+You may have more than one VPP packfile in a given mod directory.
+If you have multiple VPP files in your mod directory, and the same
+file appears in more than one VPP packfile, the one inside the
+highest-alphabetically-named VPP file takes precedence.
+
+Example:  You have "blah.vpp" and "stuff.vpp", both of which contain
+a modified "weapons.tbl" file.  "stuff" comes after "blah" alphabetically,
+so the one inside "stuff.vpp" will be used.
+
+NOTE:  Red Faction does not come with a utility to create VPP
+files.  We hope to release our VPP tools along with several other
+content-creation tools sometime in the near future, however.
+
+The good news is, there are already a couple fan-made VPP
+creation/extraction tools available.  One is VPPBuilder32, and
+can be found on the Descent Network's Red Faction Tools website:
+  http://www.red-faction.com/tools/
+
+Once you have your VPP file built, you can run either the game
+or the editor with the command line option "-mod your_mod" to load
+them with your new mod.
+
+Using the above example, you would run RF with this command:
+  RF.exe -mod JohnWeapons
+
+You can also add "-mod JohnsWeapons" in the command-line field
+found in the RF Launcher, under the Misc. tab, then hit Play.
+
+
+GENERAL NOTES:
+--------------
+When editing TBL files for a mod, be sure that you include all
+the required fields when creating a new type or editing an
+existing one.  Failure to do so may very well cause the game
+to crash.
+
+
+HUD Colors:
+-----------
+HUD colors can be changed by editing the entries in hud.tbl. 
+These are the values and what they are used for:
+  $HUD default color:  used for most of the HUD message text.
+    Default is yellow.
+  $HUD msg bg color:  background color for HUD messages from
+    other NPC's.  Default is dark grey.
+  $HUD full color:  used for varriety of things including
+    health number, ammo count, and ammo bar (for weapons like 
+	 flamethrower) when tank is near full.  Default is green.
+  $HUD mid color:  similar to full color.  Also used for armor
+    number.  Default is yellow.
+  $HUD low color:  similar to full color. Default is red.
+  $HUD countdown color:  color countdown timer is drawn in.
+    Default is grey.
+  $HUD body msg color:  color to draw message about carrying body.
+    Default is dark green.
+
+
+NEW SKINS:
+----------
+These are probably the easiest to MOD.  You can see what texture
+files a character uses for their skin in the entity.tbl file.  You
+can either edit that file and change the textures used or just make
+a copy of the current texture and alter that.  By placing the
+altered texture in your packfile it will be used in place of the
+original when running your MOD.
+
+
+NEW ITEMS:
+----------
+You will need to alter the items.tbl file to add new items to your
+MOD.  Information on the format required to define an item is at
+the top of the file.
+
+
+NEW ENTITIES:
+----------
+You will need to alter the entities.tbl file to add new character
+to your MOD.  Basically same as adding a new item.
+
+
+NEW WEAPONS:
+------------
+To make a new weapon you can take one of two routes:
+1) modify a current weapon or 2) create an entirely new one.
+
+1) To modify a current weapon you will need to edit the
+weapons.tbl and possibly ammo.tbl and/or item.tbl  (NOTE: Do NOT edit
+the original files, make copies of the ones you need and place them
+in \mods\your_mod directory).
+
+Find the definition of the weapon you want to modify in the
+weapons.tbl file and change the change the desired parameters -
+most likely to change would be damage, geo-mod abilities, clip size,
+rate of fire, and the models that represent the weapon.
+
+NOTE: if you change the weapon models replace them with files of the
+same type (if it was a .V3D use a .V3D to replace it, if it was a
+.VCM use a .VCM to replace it...  they don't mix).  When you made all
+the changes you want build a new packfile and run the game with the
+-mod your_mod option.  If you want to change the name of the weapon,
+search in strings.tbl for the current weapon name and replace it.
+
+NOTE:  Red Faction does not come with a utility to create many
+RF-specific datatypes, such as .V3D, .VCM, etc.  We hope to
+release our data-creation tools sometime in the near future, however.
+
+2) Making a new weapon is much like modifying a current one.  You will
+need the same tables only this time you will most likely have to edit
+items.tbl and ammo.tbl (unless it uses the same ammo as another gun).
+You can basically copy the definition of another weapon and then alter
+the fields to suit your needs.  Be sure to give it a unique cycle
+position and pref position.  You have to create new item types so you
+have place them in the level - create one item for the weapon and one
+for the ammo (unless it is like the grenade where you will only need
+the ammo).
+
+You can have up to 32 player weapons in the game.  
+
+You can have a total of 64 weapons in the game - this includes
+vehicle weapons and all other weapons defined in the
+weapon.tbl file.
+
+Change the $Cycle Position to change where the weapon is located in the 
+rotation order (and which key it is bound to if it is < 10); change
+$Pref Position to change the way a weapon is selected when the
+current weapon runs out of ammo (and when a new weapon is picked up) -
+the lower the pref position, the "better" the weapon is.  Ex - if you
+currently have a weapon with pref position 5 in your hand and you pick
+one up with a pref position of 3, the player will switch to the new
+weapon, but if you pick one up with a pref position of 6 he won't.
+
+To change the default weapon that the player starts with change the
+$Default Player Weapon: entry in the game.tbl file.  This should be set
+to the same name that appears in the weapon.tbl file.
+
+
+MULTIPLAYER MODS:
+-----------------
+Multiplayer mods work very much the same as single player mods.  RED
+can be run with "-mod <mymodname>" parameter just like the game can.
+By doing so, any levels you save with RED become marked as requiring
+that mod.  Anyone wishing to play those levels will need to have that
+mod running.
+
+Mod-based multiplayer levels require the same game-mode naming prefix
+as other multiplayer levels.  See RED's online Help topics for details.
+
+In the Multiplayer/Join screen, any servers running a mod will show
+up in a tan color, instead of the default blue color.  They will also
+show their mod name next to the game mode in the "Game Type" column.
+
+
+MORE INFO ON MODS:
+------------------
+Volition may release updates to this document, or updated MOD-creation
+tools in the future.  Please visit www.redfaction.com for news.
+
+Also visit the Red Faction PC forums on the VBB.  Many mod-creating
+fans post there, and would be happy to help:
+  http://vbb.volition-inc.com/cgi-bin/Ultimate.cgi

@@ -1,0 +1,43 @@
+:Base RED.HLP
+:Title 
+1 Introduction=Introduction
+1 Contents=Contents
+1 Basic Design
+1 Modes
+2 Group Mode=Group_Mode
+2 Object Mode=Object_Mode
+1 Operators
+2 Mesh Smooth=Mesh_Smooth
+1 Entities
+2 Properties Dialog=Properties_Dialog
+1 Hot Keys
+2 Camera & Movement Hotkeys=Camera_Movement_Hotkeys
+2 Universal Hotkeys=Universal_Hotkeys
+2 Brush Mode Hotkeys=Brush_Mode_Hotkeys
+2 Face Mode Hotkeys=Face_Mode_Hotkeys
+2 Vertex Mode Hotkeys=Vertex_Mode_Hotkeys
+2 Texture Mode Hotkeys=Texture_Mode_Hotkeys
+2 Object Mode Hotkeys=Object_Mode_Hotkeys
+2 Group Mode Hotkeys=Group_Mode_Hotkeys
+1 Advanced Design
+2 Particle Emitter=Particle_Emitter
+2 Liquids=Liquids
+2 Sky Box=Sky_Box
+1 Scripting & AI Systems
+2 Event System=Event_System
+2 Security Cameras=Security_Cameras
+2 Triggers=Triggers
+1 Tutorials
+2 Tutorials=Tutorials
+2 Hello Room=Tutorial___Hello_Room>main
+2 Liquids=Tutorial___Liquids>main
+2 Sky Box - Simple=Tutorial___Sky_Box>main
+2 Basic Mulitplayer Map=Basic_Mulitplayer_Map
+2 Playing and Distributing Levels=Playing_and_Distributing_Levels
+2 Using Mod-based Levels=Using_Mod_based_Levels
+2 Using Custom Textures=Using_Custom_Textures
+1 Movers
+2 Movers=Movers
+1 Navigation Network
+2 Navpoints=Navpoints
+2 Waypoints=Waypoints

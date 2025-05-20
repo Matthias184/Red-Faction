@@ -1,0 +1,129 @@
+//
+// dedicated_server.tbl
+//
+// Parameters for dedicated servers must be specified here.
+//
+// $Name:           Name of game configuration to run in, must be specified on the command line.
+//                  For example, "rf -dedicated gdm"  This cannot have spaces and such since
+//                  it is a command line parameter.
+// $Server Name:    The name of the server as clients see it.  $ME inserts your Windows username.
+// $Game Type:      In the MultiTest, can be either "DM", "CTF", or "TeamDM"
+// $Max Players:    Can be from 2 to 32.   The bigger the number, the faster your Internet
+//                  connection needs to be.   Also, too many players may cause some maps
+//                  to be too crowded or framerate to be too low.
+// $Password:       If specified, players must enter this password to join the server.
+// $Rcon Password:  If specified, allows players to access remote console commands on the server.
+//                  See README.TXT for details on rcon commands.
+// $Max Time:       Max time allowed in minutes.  Can be from 5 to 60.
+// $Max Kills:      Max number of kills before switching maps.  Can be from 1 to 100.  DM only, this
+//                  value is ignored if it's in CTF mode.
+// $Max Captures:   Max number of captures before switching maps in CTF mode.  Can be from 1 to 25.
+// $Geomod Limit:   Max number of geomods per level.  Can be from 0 to 128.
+// $Team Damage:    Allow damage from people on the same team?  Can be true or false
+// $Fall Damage:    Allow fall damage?  Can be true or false
+// $Weapons Stay:   Weapons stay for other players after you pick them up. Can be true or false
+// $Force Respawn:  Dead players automatically respawn without needing to click. Can be true or false
+// $Balance Teams:  As players join, they'll automatically get put on team with the fewest members.
+//                  Can be true or false.  Ignored in DM mode.
+// $Map:            A map to play, you may put as many $Map lines as you'd like in.  You must have
+//                  at least one.
+
+
+#Dedicated Server Options
+
+$Name:			"dm"
+$Server Name:           "$ME's Dedicated DM"
+$Game Type:		"DM"
+$Max Players:		16
+$Password:		""
+$Rcon Password:		""
+$Max Time:		1
+$Max Kills:		30
+$Max Captures:		5
+$Geomod Limit:		128
+$Team Damage:		false
+$Fall Damage:		true
+$Weapons Stay:		false
+$Force Respawn:		false
+$Balance Teams:		false
+$Map:			"dm01.rfl"
+$Map:			"dm02.rfl"
+$Map:			"dm03.rfl"
+$Map:			"dm04.rfl"
+$Map:			"dm05.rfl"
+$Map:			"dm06.rfl"
+$Map:			"dm07.rfl"
+$Map:			"dm08.rfl"
+$Map:			"dm09.rfl"
+$Map:			"dm10.rfl"
+$Map:			"dm11.rfl"
+$Map:			"dm12.rfl"
+$Map:			"dm13.rfl"
+$Map:			"dm14.rfl"
+$Map:			"dm15.rfl"
+$Map:			"dm16.rfl"
+$Map:			"dm17.rfl"
+$Map:			"dm18.rfl"
+$Map:			"dm19.rfl"
+$Map:			"dm20.rfl"
+
+$Name:			"teamdm"
+$Server Name:           "$ME's Dedicated TeamDM"
+$Game Type:		"TeamDM"
+$Max Players:		16
+$Password:		""
+$Rcon Password:		""
+$Max Time:		30
+$Max Kills:		60
+$Max Captures:		5
+$Geomod Limit:		128
+$Team Damage:		false
+$Fall Damage:		true
+$Weapons Stay:		true
+$Force Respawn:		false
+$Balance Teams:		true
+$Map:			"dm01.rfl"
+$Map:			"dm02.rfl"
+$Map:			"dm03.rfl"
+$Map:			"dm04.rfl"
+$Map:			"dm05.rfl"
+$Map:			"dm06.rfl"
+$Map:			"dm07.rfl"
+$Map:			"dm08.rfl"
+$Map:			"dm09.rfl"
+$Map:			"dm10.rfl"
+$Map:			"dm11.rfl"
+$Map:			"dm12.rfl"
+$Map:			"dm13.rfl"
+$Map:			"dm14.rfl"
+$Map:			"dm15.rfl"
+$Map:			"dm16.rfl"
+$Map:			"dm17.rfl"
+$Map:			"dm18.rfl"
+$Map:			"dm19.rfl"
+$Map:			"dm20.rfl"
+
+$Name:			"ctf"
+$Server Name:           "$ME's Dedicated CTF"
+$Game Type:		"CTF"
+$Max Players:		16
+$Password:		""
+$Rcon Password:		""
+$Max Time:		10
+$Max Kills:		5
+$Max Captures:		5
+$Geomod Limit:		128
+$Team Damage:		false
+$Fall Damage:		true
+$Weapons Stay:		false
+$Force Respawn:		false
+$Balance Teams:		true
+$Map:			"ctf01.rfl"
+$Map:			"ctf02.rfl"
+$Map:			"ctf03.rfl"
+$Map:			"ctf04.rfl"
+$Map:			"ctf05.rfl"
+$Map:			"ctf06.rfl"
+$Map:			"ctf07.rfl"
+
+#End
